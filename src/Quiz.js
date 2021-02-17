@@ -18,7 +18,7 @@ class Quiz extends Component
     let   visibleComp;
 
     if (isQuizEnd) {
-     visibleComp = <QuizEnd/>
+     visibleComp = <QuizEnd resetClickHandler = {this.handleResetClick.bind(this)}/>
    } else {
      visibleComp = <QuizQuestion
                       quiz_question = {quizData.quiz_questions[this.state.quiz_position - 1]}
@@ -34,6 +34,10 @@ class Quiz extends Component
 
   showNextQuestion() {
       this.setState({quiz_position : this.state.quiz_position + 1})
+  }
+
+  handleResetClick() {
+    this.setState({quiz_position: 1});
   }
 }
 
