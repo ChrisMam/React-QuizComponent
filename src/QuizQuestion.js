@@ -5,8 +5,8 @@ class QuizQuestion extends Component
 {
   render() {
 
-    this.questions = this.props.quiz_question.answer_options.map((question) =>
-        <QuizQuestionButton key = {question} button_text = {question} clickHandler = {this.handleClick.bind(this)}/>
+    this.questions = this.props.quiz_question.answer_options.map((question, index) =>
+        <QuizQuestionButton key = {index} button_text = {question} clickHandler = {this.handleClick.bind(this)}/>
     );
 
     return (
