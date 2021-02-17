@@ -6,7 +6,7 @@ class QuizQuestion extends Component
   render() {
 
     this.questions = this.props.quiz_question.answer_options.map((question) =>
-        <QuizQuestionButton key = {question.id} button_text = {question}/>
+        <QuizQuestionButton key = {question} button_text = {question} clickHandler = {this.handleClick.bind(this)}/>
     );
 
     return (
@@ -24,6 +24,10 @@ class QuizQuestion extends Component
 
             </main>
     )
+  }
+
+  handleClick(buttonText) {
+
   }
 
 }

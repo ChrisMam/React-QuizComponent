@@ -20,7 +20,9 @@ class Quiz extends Component
     if (isQuizEnd) {
      visibleComp = <QuizEnd/>
    } else {
-     visibleComp = <QuizQuestion  quiz_question = {quizData.quiz_questions[this.state.quiz_position - 1]}/>
+     visibleComp = <QuizQuestion
+                      quiz_question = {quizData.quiz_questions[this.state.quiz_position - 1]}
+                      showNextQuestionHandler = {this.showNextQuestion.bind(this)}/>
    }
 
     return (
@@ -28,6 +30,10 @@ class Quiz extends Component
             {visibleComp}
        </div>
      );
+  }
+
+  showNextQuestion() {
+
   }
 }
 
